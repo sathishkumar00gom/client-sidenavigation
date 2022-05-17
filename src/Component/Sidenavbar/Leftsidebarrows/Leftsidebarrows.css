@@ -22,6 +22,15 @@
   cursor: pointer;
 }
 
+.sidebar_row.active {
+  background-color: blue;
+}
+
+.sidebar_row.main {
+  background-color: aquamarine;
+  color: white;
+}
+
 .sidebar_row:hover > .leftsidebarows_icons {
   color: #ff0000;
 }

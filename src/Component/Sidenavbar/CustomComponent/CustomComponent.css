@@ -5,6 +5,13 @@
   box-shadow: 0 0 6px hsl(210 14% 90%);
 }
 
+.sidebar_rows {
+  width: 100px;
+  min-width: 250px;
+  padding: 5px 5px;
+  box-shadow: 0 0 6px hsl(210 14% 90%);
+}
+
 .leftsidebarows_icons {
   color: #d3d1d1;
   font-size: larger;
@@ -20,6 +27,12 @@
 .sidebar_row:hover {
   background-color: orange;
   cursor: pointer;
+}
+
+.sidebar_rows:hover {
+  background-color: red;
+  cursor: pointer;
+  color: white;
 }
 
 .sidebar_row:hover > .leftsidebarows_icons {

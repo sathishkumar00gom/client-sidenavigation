@@ -2,6 +2,10 @@
   flex: 0.158;
 }
 
+.sidebar.active {
+  background-color: aqua;
+}
+
 .sidebar > hr {
   height: 1px;
   border: 0;

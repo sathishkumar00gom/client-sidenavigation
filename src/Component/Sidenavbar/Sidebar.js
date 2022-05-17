@@ -1,30 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LeftSidebarRows from "./Leftsidebarrows/Leftsidebarrows"
 import './Sidenavbar.css';
 import CustomComponent from './CustomComponent/CustomComponent';
 import { Link } from 'react-router-dom';
 
-const Sidebar = (title) => {
-    const [state, setState] = useState(false)
 
-    const handleClick = () => {
-        setState(true)
-    }
+const Sidebar = (_title) => {
+
     return (
         <div className='sidebar'>
             <Link to='/'>
-                <LeftSidebarRows title='Home' />
+                <LeftSidebarRows title='Home' keys="1" />
             </Link>
-            <LeftSidebarRows title='Explore' />
-            <LeftSidebarRows title='Subscriptions' />
-            <LeftSidebarRows title="Library" />
-            <LeftSidebarRows title="History" />
-            <LeftSidebarRows title="Your videos" />
-            <LeftSidebarRows title="Watch Later" />
-            <LeftSidebarRows title="Liked videos" />
-            <LeftSidebarRows title="Liked videos" />
-            <LeftSidebarRows title="extra" />
-            <CustomComponent titles="Show more" />
+            <Link to='/Explore'>
+                <LeftSidebarRows title='Explore' keys="2" />
+            </Link>
+            <Link to='/'>
+                <LeftSidebarRows title='Subscriptions' keys="3" />
+            </Link>
+            <Link to='/'>
+                <LeftSidebarRows title="Library" keys="4" />
+            </Link>
+            <Link to='/'>
+                <CustomComponent titles="Show more" keys="10" />
+            </Link>
+            <Link to='/'>
+                <LeftSidebarRows title="History" keys="5" />
+            </Link>
+            <Link to='/'>
+                <LeftSidebarRows title="Your videos" keys="6" />
+            </Link>
+            <Link to='/'>
+                <LeftSidebarRows title="Watch Later" keys="7" />
+            </Link>
+            <Link to='/'>
+                <LeftSidebarRows title="Liked videos" keys="8" />
+            </Link>
+            <Link to='/'>
+                <LeftSidebarRows title="extra" keys="9" />
+            </Link>
+
+
+
+
+
+
+
 
         </div>
     )
