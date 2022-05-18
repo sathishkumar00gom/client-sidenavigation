@@ -3,28 +3,31 @@ import './Leftsidebarrows.css'
 
 
 
-const LeftSidebarRows = ({ title, keys }) => {
-    const [click, setClick] = useState(false)
-
-    useEffect(() => {
-
+const LeftSidebarRows = ({ title, keys, onClick }) => {
+    const [click, setClick] = useState(
         JSON.parse(localStorage.getItem("s-key"))
-        JSON.parse(localStorage.getItem("clicked"))
 
-    }, [])
+    )
+
+    console.log(JSON.parse(localStorage.getItem("s-key")), "main")
 
 
-    const onclick = (keys) => {
-        setClick(true)
+
+
+
+
+
+    const onclick = (keys, title) => {
+        setClick(keys)
         localStorage.setItem("s-key", JSON.stringify(keys))
-        localStorage.setItem("clicked", JSON.stringify(click))
+
         console.log("keys", keys)
+        onClick(title)
 
     }
     return (
-        <div id="main" className={`sidebar_row ${click ? "active" : "main"}`}  >
-            <h2 style={{ color: "black" }} className="leftsidebarows_title" onClick={() => onclick(keys)}>{title} </h2>
-
+        <div id="main" className={`sidebar_row ${keys === click ? "active" : "main"}`}  >
+            <h2 style={{ color: "black" }} className="leftsidebarows_title" onClick={() => onclick(keys, title)} webClick={onclick}>{title} </h2>
         </div >
 
     )
